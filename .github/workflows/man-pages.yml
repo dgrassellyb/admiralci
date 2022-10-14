@@ -89,7 +89,7 @@ jobs:
         uses: insightsengineering/staged-dependencies-action@v1
         with:
           renv-restore: false
-          run-system-dependencies: true
+          run-system-dependencies: false
           enable-check: false
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
