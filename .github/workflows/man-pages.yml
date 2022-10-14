@@ -78,21 +78,13 @@ jobs:
           restore-keys: ${{ runner.os }}-renv-
 
       - name: Run Staged dependencies
-        uses: insightsengineering/staged-dependencies-action@v1
+        uses: insightsengineering/staged-dependencies-action@staged-deps-fix
         with:
           run-system-dependencies: true
           enable-check: false
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Run Staged dependencies
-        uses: insightsengineering/staged-dependencies-action@v1
-        with:
-          renv-restore: false
-          run-system-dependencies: false
-          enable-check: false
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       ##################### END boilerplate steps #####################
 
       - name: Generate man pages
