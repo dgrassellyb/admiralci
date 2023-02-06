@@ -1,0 +1,20 @@
+name: Add issue to admiral project board
+
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add issue to project board
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v0.4.0
+        with:
+          # You can target a repository in a different organization
+          # to the issue
+          project-url: https://github.com/orgs/pharmaverse/projects/12
+          github-token: ${{ secrets.MY_GITHUB_TOKEN}}
+          labeled: website, vignettes, discussion, hotfix, programming, general issue, bug, documentation, release Q1-2023, release Q2-2023, release Q3-2023, release Q4-2023
+          label-operator: OR
