@@ -115,10 +115,14 @@ jobs:
           GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       ##################### END boilerplate steps #####################
 
+      #- name: Install package
+      #  run: |
+      #    R CMD build --no-build-vignettes --no-manual .
+      #    R CMD INSTALL *.tar.gz
+
       - name: Install package
-        run: |
-          R CMD build --no-build-vignettes --no-manual .
-          R CMD INSTALL *.tar.gz
+        run: renv::install(".", dependencies = "no-deps")
+        shell: Rscript {0}
 
       - name: Publish documentation
         run: |
