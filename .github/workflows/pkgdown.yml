@@ -116,7 +116,7 @@ jobs:
       ##################### END boilerplate steps #####################
 
       - name: Install package
-        run: renv::install(".", dependencies = "no-deps")
+        run: renv::install(".")
         shell: Rscript {0}
 
       - name: Publish documentation
