@@ -116,8 +116,9 @@ jobs:
       ##################### END boilerplate steps #####################
 
       - name: Install package
-        run: renv::install(".", dependencies = "no-deps")
-        shell: Rscript {0}
+        run: |
+          R CMD build --no-build-vignettes --no-manual .
+          R CMD INSTALL *.tar.gz
 
       - name: Publish documentation
         run: |
