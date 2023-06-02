@@ -25,6 +25,7 @@ concurrency:
 
 jobs:
   get_renv_list:
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     outputs:
         matrix: ${{ steps.matrix.outputs.renv }}
@@ -59,6 +60,7 @@ jobs:
         run: |
           echo ${{matrix.outputs.renv}}
   deploy-image:
+    if: github.event.pull_request.draft == false
     needs: [ get_renv_list ]
     runs-on: ubuntu-latest
     strategy:
