@@ -19,7 +19,7 @@ on:
         type: string
       latest-tag-alt-name:
         description: "An alternate name to use for 'latest-tag' for multiversion pkgdown docs"
-        default: ""
+        default: "cran-release"
         required: false
         type: string
       branches-or-tags-to-list:
@@ -29,13 +29,12 @@ on:
           This input should be a regular expression in R.
         required: false
         default: >-
-          ^main$|^devel$|^pre-release$|^latest-tag$|^cran-release$|^develop$|^v([0-9]+\\.)?([0-9]+\\.)?([0-9]+)$
+          ^cran-release$|^v([0-9]+\\.)?([0-9]+\\.)?([0-9]+)$
         type: string
 
   push:
     branches:
       - main
-      - devel
       - pre-release
 
 name: Documentation

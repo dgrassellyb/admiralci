@@ -20,12 +20,10 @@ on:
   push:
     branches:
       - main
-      - devel
       - pre-release
   pull_request:
     branches:
       - main
-      - devel
       - pre-release
 
 env:
@@ -377,7 +375,7 @@ jobs:
         id: branch
         run: |
           repo_name=$(basename "${{ github.repository }}")
-          echo "source-branch=${{ env.source-branch }}_${repo_name}@devel" >> $GITHUB_OUTPUT
+          echo "source-branch=${{ env.source-branch }}_${repo_name}" >> $GITHUB_OUTPUT
         shell: bash {0}
 
 

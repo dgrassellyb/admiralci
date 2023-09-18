@@ -18,12 +18,10 @@ on:
   push:
     branches:
       - main
-      - devel
       - pre-release
   pull_request:
     branches:
       - main
-      - devel
       - pre-release
 
 concurrency:

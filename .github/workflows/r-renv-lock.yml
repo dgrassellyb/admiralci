@@ -128,8 +128,8 @@ jobs:
           # Packages from stage dependencies to ignore
           renv::settings$ignored.packages(c("admiral", "admiraldev", "admiral.test", "admiralci"))
 
-          renv::install("pharmaverse/admiral.test@devel", repos = options("repos"))
-          renv::install("pharmaverse/admiraldev@devel", repos = options("repos"))
+          renv::install("pharmaverse/admiral.test", repos = options("repos"))
+          renv::install("pharmaverse/admiraldev", repos = options("repos"))
           renv_install_suggests("admiraldev")
           renv_install_suggests("admiral.test")
 
