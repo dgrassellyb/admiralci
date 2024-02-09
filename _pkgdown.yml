@@ -44,8 +44,6 @@ navbar:
         href: articles/pkgdown.html
       - text: Tweak Pages (fix pkgdown broken links)
         href: articles/tweak-page-hooks.html
-      - text: Pkgdown (build doc from Vignettes)
-        href: articles/pkgdown.html
       - text: Validation (build PDF validation report)
         href: articles/validation.html
       - text: Push Docker Images
